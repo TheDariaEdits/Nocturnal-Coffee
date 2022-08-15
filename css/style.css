@@ -41,7 +41,7 @@ html{
 }
 
  body {
-     
+     min-height: 100vh;
 }
 
 /******************************************
@@ -54,21 +54,28 @@ html{
 
 } */
 
-/* .nav-wrapper {
-	width: 100%;
-	margin: 0 auto;
-     display: block;
+header{
+     display: none;
+}
+
+.nav-wrapper {
+	/* width: 100%;
+	margin: 0 auto; */
+     display: flex;
+     flex-flow: column nowrap;
+     min-height: 80vh;
+     justify-content: flex-end;
+     /* flex-flow: column nowrap;
      position: fixed;
      bottom: 0;
      left: 0;
      min-height: 100vh;
-     z-index: 999;
-     background-color: rgba(154, 64, 64, 0.5);
-} */
+     z-index: 9;
+     background-color: rgba(154, 64, 64, 0.5); */
+} 
 
 .hamburger {
 	position: relative;
-	display: block;
 	width: 2.5em;
 	cursor: pointer;
 	z-index: 999;
@@ -76,6 +83,7 @@ html{
 	background: none;
 	outline: none;
 	border: 1px solid black;
+     align-self: center;
 
 }
 
@@ -112,6 +120,10 @@ html{
 	background-color: #438482;
 	padding-top: 50px;
 	transition: 0.4s
+}
+
+.mobile-nav ul {
+     padding: 0;
 }
 
 .mobile-nav li{
