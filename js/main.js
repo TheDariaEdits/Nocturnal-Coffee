@@ -14,5 +14,17 @@ window.onload = function () {
 		menu_btn.classList.toggle('is-active');
 		mobile_menu.classList.toggle('is-active');
 	});
+
+	const menu_link = document.querySelector('#menu-link');
+	const left_content = document.querySelector('.left-content');
+
+	menu_link.addEventListener('click', function () {
+		left_content.classList.toggle('alt-image')
+	})
 }
-Footer
+
+
+
+
+
+ 

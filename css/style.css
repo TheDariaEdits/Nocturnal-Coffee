@@ -36,6 +36,9 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
+:root {
+     --white: rgb(255, 255, 255);
+}
 html{
      font-size: 62.5%;
 }
@@ -54,36 +57,33 @@ html{
 
 } */
 
-header{
+header, .picture {
      display: none;
 }
 
 .nav-wrapper {
-	/* width: 100%;
-	margin: 0 auto; */
      display: flex;
      flex-flow: column nowrap;
-     min-height: 80vh;
-     justify-content: flex-end;
-     /* flex-flow: column nowrap;
-     position: fixed;
-     bottom: 0;
-     left: 0;
      min-height: 100vh;
-     z-index: 9;
-     background-color: rgba(154, 64, 64, 0.5); */
+     justify-content: flex-end;
+     z-index: 1;
+     background-image: url('../images/mobile-home.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+   
 } 
 
 .hamburger {
 	position: relative;
-	width: 2.5em;
+	width: 3em;
 	cursor: pointer;
 	z-index: 999;
 	appearance: none;
 	background: none;
 	outline: none;
-	border: 1px solid black;
+	border: 1px solid var(--white);
      align-self: center;
+     margin-bottom: 20%;
 
 }
 
@@ -92,17 +92,17 @@ header{
 	display: block;
 	width: 100%;
 	height: .25em;
-	background-color: rgb(0, 0, 0);
-	margin: .25em 0;
+	background-color: var(--white);
+	margin: .5em 0;
 	transition: 0.4s;
 }
 
 .hamburger.is-active:before {
-	transform: rotate(-45deg) translate(-4.2px, 3px);
+	transform: rotate(-45deg) translate(-4px, 6.5px);
 }
 
 .hamburger.is-active:after {
-	transform: rotate(45deg) translate(-4.2px, -3px);
+	transform: rotate(45deg) translate(-4px, -6.5px);
 }
 
 .hamburger.is-active .bar {
@@ -117,7 +117,7 @@ header{
 	min-height: 100vh;
 	display: block;
 	z-index: 98;
-	background-color: #438482;
+	background-color: rgba(255, 255, 255, 0.5);
 	padding-top: 50px;
 	transition: 0.4s
 }
@@ -128,10 +128,14 @@ header{
 
 .mobile-nav li{
      list-style: none;
-     text-decoration: none;
      text-align: center;
      padding: 1em;
      font-size: 2.5rem;
+}
+
+.mobile-nav a{
+     text-decoration: none;
+     color: black;
 }
 
 .mobile-nav.is-active {
@@ -139,16 +143,82 @@ header{
 }
 
 
+
 @media screen and (min-width: 600px) {
-     /* #nav-wrapper{
-          width: 200px;
+     .page {
+          display: flex;
+          flex-flow: row nowrap;
+     }
+     .mobile-nav, .hamburger {
+          display: none;
+     }
+
+     header {
+          display: block;
+          color: black;
+          text-align: center;
+     }
+
+     #nav-wrapper {
+          position: relative;
+          order: 2;
+          width: 25%;
           height: 100%;
+          background: var(--white);
+          color: black;
+          justify-content: flex-start;
+          font-size: 2.5rem;
+          margin: 0 auto;
 
      }
 
-     #nav-wrapper ul li:hover{
+     #nav-wrapper ul {
+          padding: 0;
+     }
+
+     #nav-wrapper ul li {
+          list-style: none;
+          padding: 1em;
+     }
+
+     #nav-wrapper ul li a {
+          text-decoration: none;
+     }
+
+     #nav-wrapper ul li a:hover {
           color: aqua;
-     } */
+          
+          
+     } 
+
+     .content {
+          display: block;
+          width: 37.5%;
+     }
+
+     .left-content {
+          position: relative;
+          background-image: url('../images/home.jpg');
+          background-size: cover;
+          order: 1;
+     }
+
+     .right-content {
+          position: relative;
+          background-image: url('../images/alt-image-2.jpg');
+          background-size: cover;
+          order: 3;
+     }
+
+     .alt-image{
+          background-image: url('../images/alt-image-1.jpg');
+          background-size: cover;
+          
+     }
+
+     
+
+
 }
 /******************************************
 /* ADDITIONAL STYLES
