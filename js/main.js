@@ -18,8 +18,17 @@ window.onload = function () {
 	const menu_link = document.querySelector('#menu-link');
 	const left_content = document.querySelector('.left-content');
 
-	menu_link.addEventListener('click', function () {
-		left_content.classList.toggle('alt-image')
+	menu_link.addEventListener('mouseover', function () {
+		var alt_images = new Array("images/alt-image-1.jpg", "images/alt-image-2.jpg", "images/alt-image-3.jpg", "images/alt-image-4.jpg", "images/mobile-home.jpg");
+		//add alt-image class
+		left_content.classList.add('alt-image');
+		//set randomizer for image array
+		var random = alt_images[ Math.floor((Math.random() * alt_images.length)) ];
+		//insert image into DOM
+		document.querySelector('.alt-image').style.backgroundImage = `url(${random})`;
+		document.querySelector('.alt-image').style.backgroundRepeat = "no-repeat";
+		document.querySelector('.alt-image').style.backgroundSize = "cover";
+		
 	})
 }
 

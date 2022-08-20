@@ -211,7 +211,7 @@ header, .picture {
      }
 
      .alt-image{
-          background-image: url('../images/alt-image-1.jpg');
+          /* background-image: url('../images/alt-image-1.jpg'); */
           background-size: cover;
           
      }
