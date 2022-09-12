@@ -37,7 +37,10 @@
 /* BASE STYLES
 /*******************************************/
 :root {
-     --white: rgb(255, 255, 255);
+     --primary: rgb(239, 236, 234);
+     --brown: rgb(112, 83, 63);
+     --light-brown: rgb(142, 129, 118);
+     --black: rgb(42, 34, 30);
 }
 html{
      font-size: 62.5%;
@@ -57,7 +60,7 @@ html{
 
 } */
 
-header, .picture {
+header, .picture, .content-hover {
      display: none;
 }
 
@@ -162,10 +165,10 @@ header, .picture {
      #nav-wrapper {
           position: relative;
           order: 2;
-          width: 25%;
+          width: 20%;
           height: 100%;
-          background: var(--white);
-          color: black;
+          background: var(--primary);
+          color: var(--light-brown);
           justify-content: flex-start;
           font-size: 2.5rem;
           margin: 0 auto;
@@ -183,17 +186,19 @@ header, .picture {
 
      #nav-wrapper ul li a {
           text-decoration: none;
+          color: var(--brown);
      }
 
      #nav-wrapper ul li a:hover {
-          color: aqua;
+          color: var(--light-brown);
           
           
      } 
 
      .content {
           display: block;
-          width: 37.5%;
+          width: 40%;
+          background-image: none;
      }
 
      .left-content {
@@ -211,10 +216,13 @@ header, .picture {
      }
 
      .alt-image{
-          /* background-image: url('../images/alt-image-1.jpg'); */
           background-size: cover;
-          
      }
+
+     /* .content-hover{
+          background-color: rgb(112, 83, 63);
+          background-image: none;
+     } */
 
      
 
