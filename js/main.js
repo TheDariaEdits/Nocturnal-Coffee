@@ -19,16 +19,17 @@ window.onload = function () {
 
 	// const menu_link = document.querySelector('#menu-link');
 	const left_content = document.querySelector('.left-content');
-	const right_text = document.querySelector('#right-text');
+	const right_content = document.querySelector('.right-content ');
 
 	nav_link.forEach(item => item.addEventListener('mouseenter', function () {
 		var alt_images = new Array("images/alt-image-1.jpg", "images/alt-image-2.jpg", "images/alt-image-3.jpg", "images/alt-image-4.jpg", "images/mobile-home.jpg");
 		//add alt-image class
 		left_content.classList.add('alt-image');
 		//change right-content
-		right_text.classList.remove('content-hover');
-		document.querySelector('.right-content').style.backgroundColor = 'blue';
+		right_content.classList.add('content-hover');
+		document.querySelector('.right-content').style.backgroundColor = 'brown';
 		document.querySelector('.right-content').style.backgroundImage = '';
+		document.querySelector('section.right-content').setAttribute('id', 'right-text');
 		//set randomizer for image array
 		var random = alt_images[ Math.floor((Math.random() * alt_images.length)) ];
 		//insert image into DOM
@@ -41,7 +42,8 @@ window.onload = function () {
 	nav_link.forEach(item => item.addEventListener('mouseout', function () {
 		left_content.classList.remove('alt-image');
 		document.querySelector('.left-content').style.backgroundImage = '';
-		right_text.classList.add('content-hover');
+		right_content.classList.remove('content-hover');
+		document.querySelector('section.right-content').setAttribute('id', '');
 	}))
 
 

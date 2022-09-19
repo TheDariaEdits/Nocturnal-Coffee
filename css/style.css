@@ -60,7 +60,7 @@ html{
 
 } */
 
-header, .picture, .content-hover {
+header, .picture, .content-hover, section.right-content {
      display: none;
 }
 
@@ -219,10 +219,17 @@ header, .picture, .content-hover {
           background-size: cover;
      }
 
-     /* .content-hover{
+     .content-hover{
           background-color: rgb(112, 83, 63);
           background-image: none;
-     } */
+          z-index: 1;
+     } 
+
+     #right-text{
+          display: block;
+          background-image: none;
+          z-index: 10;
+     }
 
      
 
