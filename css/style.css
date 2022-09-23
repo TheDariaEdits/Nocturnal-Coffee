@@ -37,10 +37,14 @@
 /* BASE STYLES
 /*******************************************/
 :root {
-     --primary: rgb(239, 236, 234);
-     --brown: rgb(112, 83, 63);
+     --primary: rgb(235, 231, 225);
+     --dark-brown: rgb(57, 22, 20);
      --light-brown: rgb(142, 129, 118);
-     --black: rgb(42, 34, 30);
+     --rust: rgb(118, 60, 38);
+     --yellow-orange: rgb(235, 169, 94);
+     --violet: rgb(22, 15, 48);
+     --green: rgb(65, 76, 55);
+     --black: rgb(54, 52, 52);
 }
 html{
      font-size: 62.5%;
@@ -74,19 +78,24 @@ header, .picture, .content-hover, section.right-content {
      background-repeat: no-repeat;
      background-size: cover;
    
-} 
+}
+
+.menu-page .nav-wrapper {
+     display: none;
+}
 
 .hamburger {
-	position: relative;
+	position: fixed;
 	width: 3em;
 	cursor: pointer;
 	z-index: 999;
 	appearance: none;
 	background: none;
 	outline: none;
-	border: 1px solid var(--white);
-     align-self: center;
-     margin-bottom: 20%;
+	border: 1px solid var(--primary);
+     top: 80%;
+     left: 50%;
+     margin-left: -1.5em;
 
 }
 
@@ -95,7 +104,7 @@ header, .picture, .content-hover, section.right-content {
 	display: block;
 	width: 100%;
 	height: .25em;
-	background-color: var(--white);
+	background-color: var(--primary);
 	margin: .5em 0;
 	transition: 0.4s;
 }
@@ -145,13 +154,46 @@ header, .picture, .content-hover, section.right-content {
 	top: 0;
 }
 
+.logo {
+     display: block;
+     object-fit: contain;
+     max-width: 100%;
+     margin-top: 2em;
+}
 
+.menu-page header {
+     display: none;
+}
+
+#menu {
+     overflow: scroll;
+     background-image: none;
+     max-height: 100vh;
+     max-width: 80vw;
+     margin: auto;
+     background-color: white;
+}
+
+#menu li {
+     display: grid;
+     grid-template-columns: 60% 40%;
+}
+
+#menu ul {
+     list-style: none;
+}
 
 @media screen and (min-width: 600px) {
-     .page {
+     .page, .menu-page {
           display: flex;
           flex-flow: row nowrap;
      }
+     
+     .home {
+          background: url('../images/home.jpg');
+          background-size: cover;
+     }
+
      .mobile-nav, .hamburger {
           display: none;
      }
@@ -163,11 +205,12 @@ header, .picture, .content-hover, section.right-content {
      }
 
      #nav-wrapper {
+          display: block;
           position: relative;
           order: 2;
           width: 20%;
           height: 100%;
-          background: var(--primary);
+          background: rgb(48, 56, 41);
           color: var(--light-brown);
           justify-content: flex-start;
           font-size: 2.5rem;
@@ -181,7 +224,8 @@ header, .picture, .content-hover, section.right-content {
 
      #nav-wrapper ul li {
           list-style: none;
-          padding: 1em;
+          padding: .5em 0;
+
      }
 
      #nav-wrapper ul li a {
@@ -189,8 +233,8 @@ header, .picture, .content-hover, section.right-content {
           color: var(--brown);
      }
 
-     #nav-wrapper ul li a:hover {
-          color: var(--light-brown);
+     #nav-wrapper ul li:hover {
+          background-color: var(--light-brown);
           
           
      } 
@@ -203,14 +247,12 @@ header, .picture, .content-hover, section.right-content {
 
      .left-content {
           position: relative;
-          background-image: url('../images/home.jpg');
-          background-size: cover;
           order: 1;
      }
 
      .right-content {
           position: relative;
-          background-image: url('../images/alt-image-2.jpg');
+          /* background-image: url('../images/alt-image-2.jpg'); */
           background-size: cover;
           order: 3;
      }
@@ -219,7 +261,7 @@ header, .picture, .content-hover, section.right-content {
           background-size: cover;
      }
 
-     .content-hover{
+     .index-page .content-hover{
           background-color: rgb(112, 83, 63);
           background-image: none;
           z-index: 1;
@@ -231,6 +273,9 @@ header, .picture, .content-hover, section.right-content {
           z-index: 10;
      }
 
+     .menu-page header {
+          display: block;
+     }
      
 
 
