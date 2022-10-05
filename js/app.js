@@ -15,13 +15,13 @@ window.onload = function () {
 		mobile_menu.classList.toggle('is-active');
 	});
 
-	const nav_link = document.querySelectorAll('.nav-link')
+	const nav_item = document.querySelectorAll('.nav-item, .nav-link')
 
 	// const menu_link = document.querySelector('#menu-link');
 	const left_content = document.querySelector('.left-content');
 	const right_content = document.querySelector('.right-content ');
 
-	nav_link.forEach(item => item.addEventListener('mouseenter', function () {
+	nav_item.forEach(item => item.addEventListener('mouseenter', function () {
 		var alt_images = new Array("images/alt-image-1.jpg",  "images/alt-image-4.jpg", "images/alt-img-1.jpg", "images/alt-img-2.jpg", "images/alt-img-3.jpg");
 		//add alt-image class
 		left_content.classList.add('alt-image');
@@ -39,7 +39,7 @@ window.onload = function () {
 		
 	}))
 	
-	nav_link.forEach(item => item.addEventListener('mouseout', function () {
+	nav_item.forEach(item => item.addEventListener('mouseout', function () {
 		left_content.classList.remove('alt-image');
 		document.querySelector('.left-content').style.backgroundImage = '';
 		right_content.classList.remove('content-hover');

@@ -37,15 +37,14 @@
 /* BASE STYLES
 /*******************************************/
 :root {
-     --primary: rgb(235, 231, 225);
+     --primary: rgb(239, 236, 234);
      --dark-brown: rgb(57, 22, 20);
      --light-brown: rgb(142, 129, 118);
      --rust: rgb(118, 60, 38);
-     --yellow-orange: rgb(235, 169, 94);
-     --violet: rgb(22, 15, 48);
-     --green: rgb(65, 76, 55);
+     --gold: rgb(193, 162, 127);
      --black: rgb(54, 52, 52);
 }
+
 html{
      font-size: 62.5%;
 }
@@ -57,12 +56,6 @@ html{
 /******************************************
 /* LAYOUT
 /*******************************************/
-/* .page {
-     display: flex;
-     background: url('../images/home.jpg') no-repeat;
-     background-size: cover;
-
-} */
 
 header, .picture, .content-hover, section.right-content {
      display: none;
@@ -77,11 +70,20 @@ header, .picture, .content-hover, section.right-content {
      background-image: url('../images/mobile-home.jpg');
      background-repeat: no-repeat;
      background-size: cover;
+     font-family: 'Ubuntu', sans-serif;
+     font-weight: 700;
    
 }
 
 .menu-page .nav-wrapper {
      display: none;
+}
+
+.nav-wrapper p {
+     font-family: 'NTR', sans-serif;
+     font-size: 1.5rem;
+     top: 80%;
+
 }
 
 .hamburger {
@@ -110,11 +112,11 @@ header, .picture, .content-hover, section.right-content {
 }
 
 .hamburger.is-active:before {
-	transform: rotate(-45deg) translate(-4px, 6.5px);
+	transform: rotate(-45deg) translate(-4px, 6px);
 }
 
 .hamburger.is-active:after {
-	transform: rotate(45deg) translate(-4px, -6.5px);
+	transform: rotate(45deg) translate(-4px, -6px);
 }
 
 .hamburger.is-active .bar {
@@ -157,21 +159,29 @@ header, .picture, .content-hover, section.right-content {
 .logo {
      display: block;
      object-fit: contain;
-     max-width: 100%;
-     margin-top: 2em;
+     max-width: 60%;
+     margin: 1em auto;
 }
 
+/* Menu Style */
 .menu-page header {
      display: none;
 }
 
+.menu-page .left-content {
+     background-image: url('../images/alt-img-1.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
 #menu {
      overflow: scroll;
-     background-image: none;
+     /* background-image: none; */
      max-height: 100vh;
      max-width: 80vw;
      margin: auto;
-     background-color: white;
+     background-color: var(--primary);
+     font-family: 'Ubuntu', sans-serif;
 }
 
 #menu li {
@@ -183,6 +193,49 @@ header, .picture, .content-hover, section.right-content {
      list-style: none;
 }
 
+#menu h2 {
+     font-weight: 700;
+     font-size: 3rem;
+     text-align: center;
+     border-bottom: 3px solid var(--gold);
+     padding-bottom: .25em;
+     margin-inline: 3em;
+     text-transform:uppercase;
+}
+
+#menu h4, #menu h5 {
+     font-weight: 700;
+     font-size: 2rem;
+     margin: 0;
+   
+}
+
+#menu p {
+     font-size: 1.5rem;
+     font-style: italic;
+     text-transform: lowercase;
+     /* margin-top: 0;
+     margin-bottom: 1.5em; */
+     margin-top: 0.2rem;
+     color: var(--gold);
+}
+
+#menu li h4{
+     border-bottom: 2px dotted var(--light-brown);
+     
+}
+
+#menu h5 {
+     padding-left: 0.5em;
+}
+
+#menu h3 {
+     font-size: 2rem;
+     text-align: center;
+     text-transform: uppercase;
+}
+
+/* Responsiveness */
 @media screen and (min-width: 600px) {
      .page, .menu-page {
           display: flex;
@@ -210,11 +263,13 @@ header, .picture, .content-hover, section.right-content {
           order: 2;
           width: 20%;
           height: 100%;
-          background: rgb(48, 56, 41);
+          background: var(--primary);
           color: var(--light-brown);
           justify-content: flex-start;
           font-size: 2.5rem;
           margin: 0 auto;
+          border-left: 3px solid black;
+          border-right: 3px solid black;
 
      }
 
