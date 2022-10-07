@@ -61,6 +61,10 @@ header, .picture, .content-hover, section.right-content {
      display: none;
 }
 
+html {
+     background-color: var(--primary);
+}
+
 .nav-wrapper {
      display: flex;
      flex-flow: column nowrap;
@@ -75,7 +79,7 @@ header, .picture, .content-hover, section.right-content {
    
 }
 
-.menu-page .nav-wrapper {
+.menu-page .nav-wrapper, .about-page .nav-wrapper, .contact-page .nav-wrapper {
      display: none;
 }
 
@@ -131,7 +135,7 @@ header, .picture, .content-hover, section.right-content {
 	min-height: 100vh;
 	display: block;
 	z-index: 98;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(254, 254, 254, 0.9);
 	padding-top: 50px;
 	transition: 0.4s
 }
@@ -154,6 +158,28 @@ header, .picture, .content-hover, section.right-content {
 
 .mobile-nav.is-active {
 	top: 0;
+}
+
+#alt-hamburger .bar, #alt-hamburger::after, #alt-hamburger::before {
+     background-color: black;
+}
+
+#alt-hamburger{
+     left: 85%;
+}
+
+.alt-index {
+     font-family: 'Ubuntu', sans-serif;
+     color: white;
+     padding-left: 2em;
+}
+
+.alt-index h1{
+     font-size: 3rem;
+}
+
+.alt-index p {
+     font-size: 1.5rem;
 }
 
 .logo {
@@ -180,7 +206,6 @@ header, .picture, .content-hover, section.right-content {
      max-height: 100vh;
      max-width: 80vw;
      margin: auto;
-     background-color: var(--primary);
      font-family: 'Ubuntu', sans-serif;
 }
 
@@ -269,9 +294,10 @@ header, .picture, .content-hover, section.right-content {
      width: 80%;
      margin: auto;
      display: grid;
-     grid-template-areas: "name" "email" "message" "submit";
      gap: 1rem;
-     margin-top: 1em;
+     margin-top: 3em;
+     grid-template-columns: 1fr 1fr;
+     font: 1.5rem 'Ubuntu', sans-serif;
    }
 
 .contact input, .contact textarea {
@@ -282,12 +308,9 @@ header, .picture, .content-hover, section.right-content {
    box-shadow: 2px 2px 10px -10px black;
 }
 
-.contact form input, .contact form textarea {
-     width: 100%;
-     padding: 1rem;
-     border: 2px solid rgba(103, 60, 34, 0.4);
-     border-radius: 5px;
-     box-shadow: 2px 2px 10px -10px rgba(59, 39, 25, 0.75);
+.contact textarea {
+     grid-column: span 2;
+     height: 200px;
 }
 
 .contact input:focus, .contact textarea:focus {
@@ -301,13 +324,13 @@ header, .picture, .content-hover, section.right-content {
      display: block;
      border: 1px solid black;
      border-radius: 5px;
+     background-color: var(--light-brown);
      letter-spacing: 0.1rem;
      box-shadow: 2px 2px 15px -10px black;
-}
-
-.contact button:hover {
-     background-color: var(--light-brown);
-     box-shadow: 0px 0px 15px -5px black;
+     grid-column: span 2;
+     color: var(--primary);
+     font-size: 3rem;
+     padding: .5em;
 }
 
 
@@ -346,7 +369,6 @@ header, .picture, .content-hover, section.right-content {
           margin: 0 auto;
           border-left: 3px solid black;
           border-right: 3px solid black;
-
      }
 
      #nav-wrapper ul {
@@ -356,7 +378,6 @@ header, .picture, .content-hover, section.right-content {
      #nav-wrapper ul li {
           list-style: none;
           padding: .5em 0;
-
      }
 
      #nav-wrapper ul li a {
@@ -366,8 +387,6 @@ header, .picture, .content-hover, section.right-content {
 
      #nav-wrapper ul li:hover {
           background-color: var(--light-brown);
-          
-          
      } 
 
      .content {
@@ -383,7 +402,6 @@ header, .picture, .content-hover, section.right-content {
 
      .right-content {
           position: relative;
-          /* background-image: url('../images/alt-image-2.jpg'); */
           background-size: cover;
           order: 3;
      }
@@ -408,7 +426,10 @@ header, .picture, .content-hover, section.right-content {
           display: block;
      }
      
-
+     .contact button:hover {
+          background-color: var(--gold);
+          box-shadow: 0px 0px 15px -5px black;
+     }
 
 }
 /******************************************
